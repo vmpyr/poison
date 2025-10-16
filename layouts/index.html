@@ -1,10 +1,13 @@
 {{ define "main" -}}
 <div class="posts">
     {{ $frontPageTypes := default (slice "posts") .Site.Params.front_page_content }}
-    {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes) }}
+    {{ $isSingle := eq (len $paginator.Pages) 1 }}
+
+    {{ range $paginator.Pages }}
     <article class="post">
         {{ partial "post/info.html" . }}
-        {{ if or (.Site.Params.noSummary) (.Params.noSummary) }}
+        {{ if or (.Site.Params.noSummary) (.Params.noSummary) $isSingle }}
         {{ .Content }}
         {{ else }}
         {{ .Summary }}
