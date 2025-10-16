@@ -1,3 +1,10 @@
+{{ if .Site.Params.email_url }}
+    <a target="_blank" class="social" title="Email" href="{{ .Site.Params.email_url }}">
+       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 485.211 485.211">
+            <path fill="currentColor" d="M301.393,241.631L464.866,424.56H20.332l163.474-182.928l58.801,51.443L301.393,241.631z M462.174,60.651H23.027 l219.579,192.142L462.174,60.651z M324.225,221.67l160.986,180.151V80.792L324.225,221.67z M0,80.792v321.029L160.972,221.64 L0,80.792z"/>
+       </svg>
+    </a>
+{{ end }}
 {{ if .Site.Params.github_url }}
     <a target="_blank" class="social" title="GitHub" href="{{ .Site.Params.github_url }}">
         <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="-2 -2 24 24">
@@ -122,13 +129,6 @@
                 <path d="M2519 3815 c-391 -66 -725 -336 -868 -703 -79 -201 -96 -462 -45 -677 83 -344 338 -641 666 -774 116 -47 205 -69 330 -80 412 -39 811 153 1040 500 193 292 240 648 128 981 -135 403 -492 699 -914 757 -100 14 -241 12 -337 -4z"/>
             </g>
         </svg>
-    </a>
-{{ end }}
-{{ if .Site.Params.email_url }}
-    <a target="_blank" class="social" title="Email" href="{{ .Site.Params.email_url }}">
-       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 485.211 485.211">
-            <path fill="currentColor" d="M301.393,241.631L464.866,424.56H20.332l163.474-182.928l58.801,51.443L301.393,241.631z M462.174,60.651H23.027 l219.579,192.142L462.174,60.651z M324.225,221.67l160.986,180.151V80.792L324.225,221.67z M0,80.792v321.029L160.972,221.64 L0,80.792z"/>
-       </svg>
     </a>
 {{ end }}
 {{ if .Site.Params.orcid }}
